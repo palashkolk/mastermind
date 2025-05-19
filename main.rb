@@ -1,15 +1,15 @@
+require_relative 'lib/computer'
 require_relative 'lib/game'
 require_relative 'lib/player'
-require_relative 'lib/computer'
 
-game = Game.new
-game.play
+new_game = Game.new
+new_game.play
 
-puts 'Would you like to play again? (y/n)'
-if gets.chomp.downcase == 'y'
+puts 'Do you want to play another game? (y/n)'
+
+reply = gets.chomp.downcase
+if reply == 'y'
   puts "\n" + '=' * 50 + "\n"
-  new_game = Game.new
-  new_game.play
+  another_game = Game.new
+  another_game.play
 end
-
-puts 'Thanks for playing Mastermind'
