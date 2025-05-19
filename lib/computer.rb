@@ -1,15 +1,12 @@
 class Computer
-  attr_reader :name, :guess
+  attr_reader :name
 
-  def initialize(name = 'HP-all-in-one')
+  def initialize(name)
     @name = name
-    @guess = nil
-    @available_colors = %w[red green blue yellow orange purple]
   end
 
   def make_guess
-    @guess = Array.new(4) { @available_colors.sample }
-    puts "#{@name} guesses: #{@guess.join(' ')}"
-    @guess
+    available_colors = %w[red blue green orange yellow purple]
+    Array.new(4) { available_colors.sample }
   end
 end

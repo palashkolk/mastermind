@@ -1,16 +1,13 @@
 class Player
-  attr_reader :name, :guess
+  attr_reader :name
 
   def initialize(name)
     @name = name
-    @guess = nil
   end
 
   def make_guess
-    puts 'Enter four color sparated by space'
-    puts 'Available colors: red, blue, green, orange, purple, yellow'
-    input = gets.chomp.downcase.split
-    @guess = input
-    @guess
+    available_colors = %w[red blue green orange yellow purple]
+    puts "\nEnter 4 colors from: #{available_colors.join(' ')}"
+    gets.chomp.downcase.split(' ')
   end
 end

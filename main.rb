@@ -5,11 +5,13 @@ require_relative 'lib/player'
 new_game = Game.new
 new_game.play
 
-puts 'Do you want to play another game? (y/n)'
+loop do
+  puts "\n" + '*' * 50 + "\n"
+  puts 'Do you want to play another game? (y/n)'
 
-reply = gets.chomp.downcase
-if reply == 'y'
-  puts "\n" + '=' * 50 + "\n"
+  reply = gets.chomp.downcase
+  break unless reply == 'y'
+
   another_game = Game.new
-  another_game.play
+  new_game.play
 end
